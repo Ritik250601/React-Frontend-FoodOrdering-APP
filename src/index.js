@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+import {AuthContextProvider} from './Store/auth-context'
+import {CartContextProvider} from './Store/Cart-context'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+ <AuthContextProvider>
+   <CartContextProvider>
+      <App />
+   </CartContextProvider>
+  </AuthContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
